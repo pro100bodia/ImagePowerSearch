@@ -1,5 +1,5 @@
-from fastapi import FastAPI, UploadFile, File
-from typing import Optional, Annotated
+from fastapi import FastAPI, File
+from typing import Annotated
 
 import cv
 import repository
@@ -20,6 +20,7 @@ def name_a_person(person_id: int, name: str):
 @app.get("/search")
 def search_image(query: str):
     return repository.search(query)
+
 
 @app.get("/image/{image_id}")
 def get_image(image_id: int):

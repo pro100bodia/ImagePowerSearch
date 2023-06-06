@@ -1,21 +1,11 @@
-import psycopg2
-from psycopg2.extensions import AsIs
 import os
-from fastapi.responses import Response
-from consul import Consul
-import re
 
-# consul_client = Consul(host='localhost', port=8500)
-#
-# host = consul_client.kv.get("postgres/host")[1]['Value']
-# host = re.sub("b|\'", "", str(host))
-# print("*HOST: " + str(host))
+import psycopg2
+from fastapi.responses import Response
 
 conn = psycopg2.connect(
     host="localhost",
     database="image_data_storage",
-    # user="postgres",
-    # password="admin",
     user=os.environ['PS_USER'],
     password=os.environ['PS_PASS']
 )
