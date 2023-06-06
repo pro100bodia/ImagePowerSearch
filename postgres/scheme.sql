@@ -1,0 +1,6 @@
+CREATE TABLE "images"("id", "binary")
+CREATE TABLE "objects"("id", "object")
+CREATE TABLE "objects_images"("id", "object")
+CREATE TABLE "faces"("id", "person")
+CREATE TABLE "faces_images"("id", "person")
+CREATE TABLE "captions"("id", "caption", "image_id")
